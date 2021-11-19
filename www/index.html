@@ -59,8 +59,6 @@
             <h3 class="title">Welcome to RentalZ</h3>
             <div class="home__slider">
                 <img src="img/slider1.jpeg" alt="">
-                <img src="img/slider2.jpeg" alt="">
-                <img src="img/slider3.jpeg" alt="">
             </div>
             <div class="home__list">
                 <a href="#page-create" data-transition="none" class="ui-btn ui-alt-icon ui-icon-plus ui-nodisc-icon ui-btn-icon-top">New Property</a>
@@ -540,16 +538,15 @@
                 <form id="frm-add-note" style="margin-top: 5px; margin-bottom: 20px;">
                     <textarea id="message" placeholder="Please enter your note here..."></textarea>
 
-                    <div>
-                        <div style="float: left;">
-                            <button type="button" id="btn-gallery" class="ui-btn ui-icon-grid ui-corner-all ui-btn-icon-notext ui-nodisc-icon ui-btn-inline ui-mini green">
-                                Gallery</button>
-                            <button type="button" id="btn-camera" class="ui-btn ui-icon-camera ui-corner-all ui-btn-icon-notext ui-nodisc-icon ui-btn-inline ui-mini green">Camera</button>
+                    <div class="gr_cmt">
+                        <div class="menu_photo" style="float: left;">
+                            <button type="button" id="btn-gallery" class="btn_gallery">
+                                <img src="img/menu.png" alt=""></button>
+                            <button type="button" id="btn-camera" class="btn_gallery">
+                                <img src="img/photograph.png" alt=""></button>
                         </div>
+                        <button type="submit" id="btn_add" class="btn_gallery"><img src="img/plus.png" alt="">ADD</button>
 
-                        <div style="float: right;">
-                            <button type="submit" class="ui-btn ui-icon-plus ui-corner-all ui-btn-icon-left ui-nodisc-icon ui-btn-inline ui-mini green">Add</button>
-                        </div>
                     </div>
 
                     <div style="clear: both;"></div>

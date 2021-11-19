@@ -102,3 +102,45 @@ h1 {
     display: flex;
     flex-direction: column;
 }
+
+.home__slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.menu_photo {
+    display: flex;
+}
+
+.btn_gallery {
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border: none;
+    padding: 2px 2px;
+    margin: 2px 5px;
+}
+
+.btn_gallery img {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+}
+
+.gr_cmt {
+    display: flex;
+    justify-content: space-between;
+}
+
+#btn_add {
+    width: 80px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+#btn_add img {
+    margin-right: 5px;
+}
