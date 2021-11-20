@@ -935,8 +935,8 @@ function updateNoteConfirm(e) {
                     </td>
 
                     <td>
-                        <button type='submit' class='ui-btn ui-icon-check ui-corner-all ui-btn-icon-notext ui-nodisc-icon ui-btn-inline ui-mini green' style='margin-bottom: 5px;'></button>
-                        <button type='reset' class='ui-btn ui-icon-delete ui-corner-all ui-btn-icon-notext ui-nodisc-icon ui-btn-inline ui-mini red'></button>
+                        <button type='submit' class='edit-note' style='margin-bottom: 5px;'><img src="img/check.png" alt=""></button>
+                        <button type='reset' class='edit-note'><img src="img/cancel.png" alt=""></button>
                     </td>
                 </tr>
             </table>

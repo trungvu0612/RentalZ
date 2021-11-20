@@ -144,3 +144,32 @@ h1 {
 #btn_add img {
     margin-right: 5px;
 }
+
+.searchbtn {
+    width: 40px;
+    height: 40px;
+}
+
+.searchbtn img {
+    width: 40px;
+    height: 40px;
+}
+
+.edit-note {
+    width: 30px;
+    height: 30px;
+    border: none;
+    background-color: transparent;
+}
+
+.edit-note img {
+    width: 30px;
+    height: 30px;
+}
+
+.ui-content {
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    margin: 10px 20px;
+}
