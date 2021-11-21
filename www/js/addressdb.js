@@ -10,7 +10,7 @@ function transactionSuccessForTableData(tableName, id, name) {
     log(`Insert (${id}, "${name}") into '${tableName}' successfully.`);
 }
 
-function prepareDatabase(db) {
+function createDatabase(db) {
     db.transaction(function(tx) {
         // Create table PROPERTY.
         var query = `CREATE TABLE IF NOT EXISTS Property (

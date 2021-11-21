@@ -32,7 +32,7 @@ $(document).on("pagebeforeshow", "#page-create", function() {
 });
 
 $(document).on("submit", "#page-create #frm-register", confirmProperty);
-$(document).on("submit", "#page-create #frm-confirm", registerProperty);
+$(document).on("submit", "#page-create #frm-confirm", addProperty);
 $(document).on("vclick", "#page-create #frm-confirm #edit", function() {
     $("#page-create #frm-confirm").popup("close");
 });
@@ -50,7 +50,7 @@ $(document).on("change", "#page-create #frm-register #district", function() {
 });
 
 // Page LIST
-$(document).on("pagebeforeshow", "#page-list", showList);
+$(document).on("pagebeforeshow", "#page-list", showProperty);
 
 $(document).on("submit", "#page-list #frm-search", search);
 
@@ -65,12 +65,12 @@ $(document).on("change", "#page-list #frm-search #district", function() {
     addAddressOption_Ward($("#page-list #frm-search #ward"), this.value);
 });
 
-$(document).on("vclick", "#page-list #btn-reset", showList);
+$(document).on("vclick", "#page-list #btn-reset", showProperty);
 $(document).on("vclick", "#page-list #btn-filter-popup", openFormSearch);
 $(document).on("vclick", "#page-list #list-property li a", navigatePageDetail);
 
 // Page DETAIL
-$(document).on("pagebeforeshow", "#page-detail", showDetail);
+$(document).on("pagebeforeshow", "#page-detail", showItem);
 
 $(document).on("vclick", "#page-detail #img-preview #btn-close", function() {
     $("#page-detail #img-preview").css("display", "none");
@@ -124,8 +124,8 @@ $(document).on("submit", "#page-detail #note #frm-add-note", addNote);
 $(document).on("reset", "#page-detail #note #frm-update-note", resetNote);
 $(document).on("submit", "#page-detail #note #frm-update-note", updateNote);
 $(document).on("submit", "#page-detail #frm-delete-note", deleteNote);
-$(document).on("submit", "#page-detail #frm-update", updateProperty);
-$(document).on("submit", "#page-detail #frm-delete", deleteProperty);
+$(document).on("submit", "#page-detail #frm-update", propertyUpdate);
+$(document).on("submit", "#page-detail #frm-delete", propertyDelete);
 $(document).on(
     "keyup",
     "#page-detail #frm-delete #txt-confirm",
@@ -360,7 +360,7 @@ function confirmProperty(e) {
     }
 }
 // create table in database
-function registerProperty(e) {
+function addProperty(e) {
     e.preventDefault();
 
     var info = getFormInfoByValue("#page-create #frm-register", true);
@@ -410,7 +410,7 @@ function registerProperty(e) {
 }
 
 // show data properties in db
-function showList() {
+function showProperty() {
     db.transaction(function(tx) {
         var query = `SELECT Property.Id AS Id, Property.Name AS Name, Price, Bedroom, Type, City.Name AS City
                      FROM Property LEFT JOIN City ON Property.City = City.Id`;
@@ -434,7 +434,7 @@ function navigatePageDetail(e) {
 }
 
 // show detail's properties
-function showDetail() {
+function showItem() {
     var id = localStorage.getItem(currentPropertyId);
 
     db.transaction(function(tx) {
@@ -491,7 +491,7 @@ function confirmDeleteProperty() {
     }
 }
 
-function deleteProperty(e) {
+function propertyDelete(e) {
     e.preventDefault();
 
     var id = localStorage.getItem(currentPropertyId);
@@ -690,7 +690,7 @@ function showUpdate() {
     });
 }
 
-function updateProperty(e) {
+function propertyUpdate(e) {
     e.preventDefault();
 
     if (isValid("#page-detail #frm-update")) {
@@ -726,7 +726,7 @@ function updateProperty(e) {
             function transactionSuccess(tx, result) {
                 log(`Update property '${info.Name}' successfully.`);
 
-                showDetail();
+                showItem();
 
                 $("#page-detail #frm-update").popup("close");
             }
