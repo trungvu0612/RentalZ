@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="vn.edu.greenwich.database" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>Database</name>
+    <name>RentalZ</name>
     <description>
         A sample Apache Cordova Database.
     </description>
-    <author email="baohnp@fe.edu.vn" href="https://greenwich.edu.vn/">
-        Serco Honan
+    <author email="Trungvtgcs18467" href="https://greenwich.edu.vn/">
+        Vu Thanh Trung
     </author>
     <content src="index.html" />
     <access origin="*" />
